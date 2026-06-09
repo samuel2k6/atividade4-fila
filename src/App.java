@@ -70,11 +70,13 @@ public class App {
     }
 
     private static void executarExercicio01() {
-
+        Queue<Integer> fila = criarFilaValoresFixos();
+        System.out.println(fila);
     }
 
     private static void executarExercicio02() {
-
+        Queue<String> fila = criarFilaNomes();
+        System.out.println(fila);
     }
 
     private static void executarExercicio03(Scanner scanner) {
@@ -90,11 +92,24 @@ public class App {
     }
 
     public static Queue<Integer> criarFilaValoresFixos() {
-        return null;
+        Queue<Integer> fila = new LinkedList<>();
+        fila.add(10);
+        fila.add(20);
+        fila.add(30);
+        fila.add(40);
+        fila.add(50);
+
+        return fila;
     }
 
     public static Queue<String> criarFilaNomes() {
-        return null;
+        Queue<String> fila = new LinkedList<>();
+        fila.add("Ana");
+        fila.add("Bruno");
+        fila.add("Carlos");
+        fila.add("Pedro");
+
+        return fila;
     }
 
     public static List<Integer> removerTodosElementos(Queue<Integer> fila) {
@@ -106,14 +121,14 @@ public class App {
     }
 
     public static void adicionarDocumento(Queue<String> fila, String documento) {
-
+        fila.add(documento);
     }
 
     public static String imprimirDocumento(Queue<String> fila) {
-        return null;
+        return fila.poll();
     }
 
     public static String proximoDocumento(Queue<String> fila) {
-        return null;
+        return fila.peek();
     }
 }
