@@ -72,23 +72,50 @@ public class App {
     private static void executarExercicio01() {
         Queue<Integer> fila = criarFilaValoresFixos();
         System.out.println(fila);
+        fila.poll();
+        System.out.println(fila);
     }
 
     private static void executarExercicio02() {
         Queue<String> fila = criarFilaNomes();
-        System.out.println(fila);
+        System.out.println(fila.peek());
+        System.out.println(fila.size());
     }
 
     private static void executarExercicio03(Scanner scanner) {
+        Queue<Integer> fila = new LinkedList<>();
 
+    for (int i = 1; i <= 10; i++) {
+        fila.add(i);
+    }
+
+    List<Integer> removidos = removerTodosElementos(fila);
+
+    System.out.println("Elementos removidos: " + removidos);
+    System.out.println("Fila vazia? " + fila.isEmpty());
     }
 
     private static void executarExercicio04(Scanner scanner) {
+        Queue<String> fila = new LinkedList<>();
+    fila.add("Ana");
+    fila.add("Carlos");
+    fila.add("Pedro");
 
+    List<String> atendidos = atenderClientes(fila);
+
+    System.out.println("Clientes atendidos: " + atendidos);
+    System.out.println("Fila vazia? " + fila.isEmpty());
     }
 
     private static void executarExercicio05(Scanner scanner) {
+        Queue<String> fila = new LinkedList<>();
 
+    adicionarDocumento(fila, "relatorio.pdf");
+    adicionarDocumento(fila, "boleto.pdf");
+
+    System.out.println("Proximo documento: " + proximoDocumento(fila));
+    System.out.println("Imprimindo: " + imprimirDocumento(fila));
+    System.out.println("Proximo documento: " + proximoDocumento(fila));
     }
 
     public static Queue<Integer> criarFilaValoresFixos() {
@@ -105,9 +132,9 @@ public class App {
     public static Queue<String> criarFilaNomes() {
         Queue<String> fila = new LinkedList<>();
         fila.add("Ana");
-        fila.add("Bruno");
         fila.add("Carlos");
         fila.add("Pedro");
+        fila.add("Juliana");
 
         return fila;
     }
