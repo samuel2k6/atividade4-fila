@@ -113,11 +113,23 @@ public class App {
     }
 
     public static List<Integer> removerTodosElementos(Queue<Integer> fila) {
-        return null;
+        List<Integer> removidos = new ArrayList<>();
+
+    while (!fila.isEmpty()) {
+        removidos.add(fila.poll());
+    }
+
+    return removidos;
     }
 
     public static List<String> atenderClientes(Queue<String> fila) {
-        return null;
+        List<String> atendidos = new ArrayList<>();
+
+    while (!fila.isEmpty()) {
+        atendidos.add(fila.poll());
+    }
+
+    return atendidos;
     }
 
     public static void adicionarDocumento(Queue<String> fila, String documento) {
