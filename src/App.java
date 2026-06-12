@@ -96,27 +96,48 @@ public class App {
     }
 
     private static void executarExercicio04(Scanner scanner) {
-        Queue<String> fila = new LinkedList<>();
-    fila.add("Ana");
-    fila.add("Carlos");
-    fila.add("Pedro");
+    Queue<String> fila = new LinkedList<>();
+
+    System.out.print("Quantos clientes deseja adicionar? ");
+    int quantidade = scanner.nextInt();
+    scanner.nextLine();
+
+    for (int i = 1; i <= quantidade; i++) {
+        System.out.print("Nome do cliente " + i + ": ");
+        fila.add(scanner.nextLine());
+    }
 
     List<String> atendidos = atenderClientes(fila);
 
     System.out.println("Clientes atendidos: " + atendidos);
     System.out.println("Fila vazia? " + fila.isEmpty());
-    }
+}
 
     private static void executarExercicio05(Scanner scanner) {
-        Queue<String> fila = new LinkedList<>();
+    Queue<String> fila = new LinkedList<>();
 
-    adicionarDocumento(fila, "relatorio.pdf");
-    adicionarDocumento(fila, "boleto.pdf");
+    System.out.print("Quantos documentos deseja adicionar? ");
+    int quantidade = scanner.nextInt();
+    scanner.nextLine();
 
-    System.out.println("Proximo documento: " + proximoDocumento(fila));
-    System.out.println("Imprimindo: " + imprimirDocumento(fila));
-    System.out.println("Proximo documento: " + proximoDocumento(fila));
+    for (int i = 1; i <= quantidade; i++) {
+        System.out.print("Nome do documento " + i + ": ");
+        adicionarDocumento(fila, scanner.nextLine());
     }
+
+    if (!fila.isEmpty()) {
+        System.out.println("Próximo documento: " + proximoDocumento(fila));
+        System.out.println("Imprimindo: " + imprimirDocumento(fila));
+
+        if (!fila.isEmpty()) {
+            System.out.println("Próximo documento: " + proximoDocumento(fila));
+        } else {
+            System.out.println("Não há mais documentos na fila.");
+        }
+    } else {
+        System.out.println("Nenhum documento foi adicionado.");
+    }
+}
 
     public static Queue<Integer> criarFilaValoresFixos() {
         Queue<Integer> fila = new LinkedList<>();
